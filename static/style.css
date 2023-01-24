@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(246, 235, 215);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 1vw;
+    padding-right:1vw;
+}
+
+::selection {
+    background-color: salmon;
+    color:white;
+    mix-blend-mode: multiply;
+}
+
+.nav {
+    height:50px;
+    border-bottom:solid;
+    border-color: salmon;
+    display: flex;
+    align-items: center;
+}
+
+.selected, .link {
+    border:none;
+    font-size:2vmin;
+    color:black;
+    text-decoration: none;
+    font-style: italic;
+    background-color: transparent;
+    transition:0.2s;
+    padding:0.7vmin;
+    border-radius: 1vmin;
+    color:salmon;
+    margin:1vmin;
+}
+
+.selected, .link:hover {
+    background-color: salmon;
+    color:white;
+    mix-blend-mode: multiply;
+}
+
+.selected:active, .link:active {
+    color:transparent;
+}
+
+#swipe {
+    position:fixed;
+    opacity:1;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(33, 33, 33);
+}
+
+footer {
+    position:absolute;
+    bottom:2vh;
+}
