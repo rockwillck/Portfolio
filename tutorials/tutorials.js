@@ -25,15 +25,15 @@ function rerun(search) {
         box.removeChild(box.lastChild);
     }
     for ([n, src] of Object.entries(tutorials)) {
+        match = true
         search.split(" ").forEach((searchKey) => {
-            match = true
-            if (!n.toLowerCase().split(" ").includes(searchKey.toLowerCase()) && searchKey != "") {
+            if (!n.toLowerCase().includes(searchKey.toLowerCase()) && searchKey != "") {
                 match = false
             }
-            if (match) {
-                registerTut(box, n, src)
-            }
         })
+        if (match) {
+            registerTut(box, n, src)
+        }
     }
 }
 
