@@ -5,7 +5,7 @@ function registerTut(box, name, src) {
     item = document.createElement("button")
     item.className = "tutorialItem"
     item.href = src[0]
-    item.innerText = name
+    item.innerText = name + ` [${difficulties[src[2]].toUpperCase()}]`
     item.addEventListener("click", (e) => {
         route(src[0])
     })
