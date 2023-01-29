@@ -16,7 +16,7 @@ body {
     position: sticky;
     top:0;
     background-color: rgb(246, 235, 215);
-    height:50px;
+    height:7vmin;
     border-bottom:solid;
     border-color: salmon;
     display: flex;
