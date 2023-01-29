@@ -18,7 +18,11 @@ for ([n, src] of Object.entries(tabs)) {
         matched = true
     }
 }
-nav.innerHTML += `<img class='options' src='${headRoute + "/static/anim.svg"}' onclick="localStorage.setItem('animation', localStorage.getItem('animation') == 'true' ? 'false' : 'true')"></img>`
+nav.innerHTML += `<img class='options ${localStorage.getItem('animation') == 'true' ? 'selected' : 'link'}' src='${headRoute + "/static/anim.svg"}' onclick="toggleSwipe(this)"></img>`
+function toggleSwipe(img) {
+    localStorage.setItem('animation', localStorage.getItem('animation') == 'true' ? 'false' : 'true')
+    img.className = `options ${localStorage.getItem('animation') == 'true' ? 'selected' : 'link'}`
+}
 hiddenTabs = ["404.html"]
 if (!matched && !hiddenTabs.includes(window.location.toString().split("/")[window.location.toString().split("/").length - 1])) {
     window.location.replace("index.html")
