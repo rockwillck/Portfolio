@@ -3,6 +3,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-left: 1vw;
     padding-right:1vw;
+    padding-bottom:5vh;
 }
 
 ::selection {
@@ -12,6 +13,9 @@ body {
 }
 
 .nav {
+    position: sticky;
+    top:0;
+    background-color: rgb(246, 235, 215);
     height:50px;
     border-bottom:solid;
     border-color: salmon;
@@ -31,6 +35,7 @@ body {
     border-radius: 1vmin;
     color:salmon;
     margin-right:1vmin;
+    margin-top:1vh;
 }
 .link {
     border:none;
@@ -63,8 +68,14 @@ body {
 }
 
 footer {
-    position:absolute;
-    bottom:2vh;
+    position:fixed;
+    bottom:0vh;
+    padding-top:1vmin;
+    padding-bottom: 1.5vmin;
+    border-top: solid;
+    border-color: salmon;
+    background-color: rgb(246, 235, 215);
+    width:96.75%;
 }
 
 .four {
@@ -104,5 +115,62 @@ small {
     background-color: salmon;
 }
 .options:active {
+    opacity: 0.5;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border:solid;
+    border-color: salmon;
+    border-radius: 1vmin;
+    border-width: 0.1vmin;
+    padding:1vmin;
+    font-size:1.5vmin;
+    color:salmon;
+}
+
+#tutorialList {
+    margin-top: 2vmin;
+    height:50vh;
+    border:solid;
+    border-color: salmon;
+    border-radius: 1vmin;
+    border-width: 0.1vmin;
+    overflow-y: scroll;
+}
+
+.tutorialItem {
+    color:salmon;
+    padding:2vmin;
+    display: block;
+    transition: 0.2s;
+    text-decoration: none;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    text-align: left;
+    font-size: 2vmin;
+}
+.tutorialItem:hover {
+    background-color: salmon;
+    padding:2.1vmin;
+    font-size: 2.5vmin;
+    color:white;
+}
+
+.code {
+    background-color: lightgray;
+    padding:1vmin;
+    border-radius: 1vmin;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    color:salmon;
+    transition: 0.2s;
+    display: block;
+    margin-top:1vh;
+}
+a:hover {
     opacity: 0.5;
 }

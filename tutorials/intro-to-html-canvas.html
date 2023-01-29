@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <link rel="icon" href="../static/favicon.png">
+    <meta name="keywords" content="developer, javascript, js, html, python, portfolio, dev, css, tutorial, tutorials, blog, code">
+    <meta name="description" content="Developer portfolio for William Choi-Kim.">
+    <meta name="author" content="William Choi-Kim">
+</head>
+<body>
+    <h1>Intro to HTML Canvas</h1>
+    <p>HTML Canvas is a very powerful tool for all web developers. It's also really easy to learn, and unlocks infinite possibilities - you can make ultra-animated elements, interactive backgrounds, or even full-fledged games!</p>
+    <h2>The Basics</h2>
+    <p>HTML Canvas is a DOM element, which means it can be included in HTML files manually. It can also be created dynamically, which we'll explore later.</p>
+    <p>First we'll create a canvas element by making a new <code>index.html</code> file and adding the following code:</p>
+    <div class="code">
+        <canvas id="canvas" style="width:10vmin;height:10vmin;"></canvas>
+        <script src="script.js"></script>
+    </div>
+    <p>We've now created a canvas element! The width and height just tells the browser how big the canvas should be.</p>
+    <p>Then, we create a <code>script.js</code> file and reference the canvas.</p>
+    <div class="code">const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = 100;
+        canvas.height = 100;
+    </div>
+    <p>The way HTML Canvas works is through its <i>context</i>. We called our context ctx in this instance, but you can call it whatever you want. You tell its context what to draw, where to draw, etc.</p>
+    <p>We've also defined our canvas' width and height. If we don't do that, our canvas could be 0x0, or something else if the browser chooses.</p>
+    <p>Now let's try drawing a rectangle:</p>
+    <div class="code">ctx.fillStyle = "white"
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "red"
+        ctx.fillRect(0, 0, 80, 50);;
+    </div>
+    <p>Looking at <code>ctx.fillRect</code>:</p>
+    <p>The first value is the x-coordinate of the top-left corner.</p>
+    <p>The second value is the y-coordinate of the top-left corner.</p>
+    <p>The third value is the width, and the fourth value is the height.</p>
+    <p>The result should be:</p>
+    <canvas id="canvas" style="width:10vmin;height:10vmin;"></canvas>
+    <p>And there you go! To learn more about HTML canvas, check out these resources:</p>
+    <a href="https://www.youtube.com/watch?v=eI9idPTT0c4">Chris Courses on YouTube</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API on MDN Docs</a>
+</body>
+<script src="../static/script.js"></script>
+<script src="tutorials.js"></script>
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = 100;
+canvas.height = 100;
+ctx.fillStyle = "white"
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "red"
+ctx.fillRect(0, 0, 80, 50);
+</script>
+</html>

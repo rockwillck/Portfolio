@@ -11,21 +11,18 @@ let file = window.location.href.split("/").slice(3, window.location.href.split("
 for ([n, src] of Object.entries(tabs)) {
     nav.innerHTML += `
 <button class="${file == src ? 'selected' : 'link'}" onclick="route('${headRoute + "/" + src}')">${n}</button>`
-    if (window.location.toString().split("/")[window.location.toString().split("/").length - 1] == src.split("/")[src.split("/").length - 1]) {
-        title = document.createElement("title")
-        title.innerText = n
-        document.head.appendChild(title)
-        matched = true
-    }
 }
-nav.innerHTML += `<img class='options ${localStorage.getItem('animation') == 'true' ? 'selected' : 'link'}' src='${headRoute + "/static/on.svg"}' onclick="toggleSwipe(this)"></img>`
+title = document.createElement("title")
+title.innerText = document.getElementsByTagName("h1")[0].innerText
+document.head.appendChild(title)
+matched = true
+nav.innerHTML += `<img class='options ${localStorage.getItem('animation') == 'true' ? 'selected' : 'link'}' src='${headRoute + `/static/${localStorage.getItem('animation') == 'true' ? "on.svg" : "off.svg"}`}' onclick="toggleSwipe(this)"></img>`
 function toggleSwipe(img) {
     localStorage.setItem('animation', localStorage.getItem('animation') == 'true' ? 'false' : 'true')
     img.src = localStorage.getItem('animation') == 'true' ? headRoute + "/static/on.svg" : headRoute + "/static/off.svg"
     img.className = `options ${localStorage.getItem('animation') == 'true' ? 'selected' : 'link'}`
 }
-hiddenTabs = ["404.html"]
-if (!matched && !hiddenTabs.includes(window.location.toString().split("/")[window.location.toString().split("/").length - 1])) {
+if (file == "") {
     window.location.replace("index.html")
 }
 
