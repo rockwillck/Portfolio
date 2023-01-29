@@ -27,7 +27,7 @@ function rerun(search) {
     for ([n, src] of Object.entries(tutorials)) {
         match = true
         search.split(" ").forEach((searchKey) => {
-            if (!n.toLowerCase().includes(searchKey.toLowerCase()) && searchKey != "") {
+            if (!(n + src[1].join("")).toLowerCase().includes(searchKey.toLowerCase()) && searchKey != "") {
                 match = false
             }
         })
